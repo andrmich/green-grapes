@@ -1,8 +1,9 @@
 from django.db import models
 from django.urls import reverse
-from hvad.models import TranslatableModel, TranslatedFields
+#from hvad.models import TranslatableModel, TranslatedFields
 
-class Post(TranslatableModel):
+
+class Post(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(
         'auth.User',
@@ -10,9 +11,9 @@ class Post(TranslatableModel):
     )
     body = models.TextField()
 
-    translations = TranslatedFields(
-    title = models.CharField(max_length=250)
-)
+    # translations = TranslatedFields(
+    # title = models.CharField(max_length=250)
+#)
     def __str__(self):
         return self.title
 
