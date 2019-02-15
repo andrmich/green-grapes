@@ -112,8 +112,7 @@ LANGUAGE_CODE = 'en-us'
 
 gettext = lambda s:s
 LANGUAGES = (
- ('pl', gettext('Polish')),
- ('en', gettext ('English')),
+  ('en', gettext ('English')),
 )
 
 TIME_ZONE = 'UTC'
