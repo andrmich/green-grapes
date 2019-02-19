@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-#from hvad.models import TranslatableModel, TranslatedFields
+from django.utils.translation import gettext
 
 
 class Post(models.Model):
