@@ -4,10 +4,10 @@
 
 {% block content %}
 
-  {% trans "Let's translate this" %}
-  {% get_current_language as LANGUAGE_CODE %}
 
-  <h1>{{ LANGUAGE_CODE }}</h1>
+<!-- #  {% get_current_language as LANGUAGE_CODE %}
+
+#  <h1>{{ LANGUAGE_CODE }}</h1> -->
 
   <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
     <input type="hidden" name="next" value="{{ redirect_to }}">
@@ -21,13 +21,17 @@
         </option>
         {% endfor %}
     </select>
-    <input type="submit" value="Go"/>
+    <input type="submit" class="btn btn-secondary" value="Go"/>
 
     </form>
   {% for post in object_list %}
     <div class="post-entry">
-        <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+
+      <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
         <p>{{ post.body }}</p>
+        <p>published: {{ post.created_at }}</p>
+
+
       </div>
       {% endfor %}
 {% endblock content %}

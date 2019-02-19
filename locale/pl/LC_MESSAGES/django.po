@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-19 08:46+0100\n"
+"POT-Creation-Date: 2019-02-19 13:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,14 +20,27 @@ msgstr ""
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: blog_project/settings.py:115
+#: blog_project/settings.py:117
 msgid "English"
 msgstr ""
 
-#: blog_project/settings.py:116
+#: blog_project/settings.py:118
 msgid "Polish"
 msgstr ""
 
-#: templates/home.html:7
-msgid "Let's translate this"
-msgstr "Przetłumaczmy to"
+#: templates/base.html:12
+msgid "Code all day long!"
+msgstr "No to kodzimy"
+
+#: templates/base.html:18
+#, fuzzy
+#| msgid "Code all day long!"
+msgid " Code all day long!"
+msgstr "No to kodzimy"
+
+#: templates/base.html:27
+msgid "Hi! Welcome to my blog! "
+msgstr "Cześć! Fajnie Cię widzieć na moim blogu!"
+
+#~ msgid "Let's translate this"
+#~ msgstr "Przetłumaczmy to"
