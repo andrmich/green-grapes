@@ -5,8 +5,12 @@ from django.views.generic import ListView, DetailView
 from .models import Post
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.utils import translation
 
 class BlogListView(ListView):
+    # user_languange = 'pl'
+    # translation.activate(user_languange)
+    # .sessiIon[translation.LANGUAGE_SESSION_KEY] = user_languange
     model = Post
     template_name = 'home.html'
 
