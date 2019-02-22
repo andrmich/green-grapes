@@ -16,8 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
-from django.contrib.staticfiles.storage import staticfiles_storage
-from django.views.generic.base import RedirectView
+
 
 urlpatterns = [
     path ('i18n/', include ('django.conf.urls.i18n')),
@@ -25,11 +24,4 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
     path('', include('blog.urls')),
-    #path('', url(r'^favicon.ico$',RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico'), ), name="favicon"),
-]
-#
-# urlpatterns += i18n_patterns (
-#     path('accounts/', include('django.contrib.auth.urls')),
-#     path('accounts/', include('accounts.urls')),
-#     path('', include('blog.urls')),
-# )
+    ]

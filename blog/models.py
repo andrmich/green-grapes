@@ -21,3 +21,11 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post_detail', args=[str(self.id)])
+
+class Skill(models.Model):
+    title = models.CharField(max_length=300)
+    date = models.DateTimeField(auto_now_add=True)
+    body = RichTextField()
+
+    def __str__(self):
+        return self.title

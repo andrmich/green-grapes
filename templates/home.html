@@ -9,7 +9,7 @@
 
 #  <h1>{{ LANGUAGE_CODE }}</h1> -->
 
-  <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+  <!-- <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
     <input type="hidden" name="next" value="{{ redirect_to }}">
     <select name="language">
       {% get_current_language as LANGUAGE_CODE %}
@@ -21,7 +21,7 @@
         </option>
         {% endfor %}
     </select>
-    <input type="submit" class="btn btn-secondary" value="Go"/>
+    <input type="submit" class="btn btn-secondary" value="Go"/> -->
 
     </form>
   {% for post in object_list %}

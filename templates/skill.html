@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+{% for skill in skill_list %}
+    <div class="skill-entry">
+
+        <h2>{{ skill.title }}</h2>
+        <p>{{ skill.date }}</p>
+        <p>{{ skill.how }}</p>
+    
+    </div>
+      {% endfor %}
+      
+{% endblock content %}
