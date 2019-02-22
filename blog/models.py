@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext
+from ckeditor.fields import RichTextField
 
 
 class Post(models.Model):
@@ -10,7 +11,7 @@ class Post(models.Model):
         on_delete=models.CASCADE,
     )
     created_at = models.DateTimeField(auto_now_add=True)
-    body = models.TextField()
+    body = RichTextField()
 
     # translations = TranslatedFields(
     # title = models.CharField(max_length=250)
