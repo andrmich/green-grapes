@@ -25,7 +25,7 @@ class Post(models.Model):
 class Skill(models.Model):
     title = models.CharField(max_length=300)
     date = models.DateTimeField(auto_now_add=True)
-    body = RichTextField()
+    body = RichTextField(config_name='default')
 
     def __str__(self):
         return self.title
