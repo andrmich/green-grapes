@@ -29,9 +29,10 @@
 
       <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
       {{ post.body | safe}}
+        <hr>
         <p>published: {{ post.created_at }}</p>
 
-
+<br>
       </div>
       {% endfor %}
 {% endblock content %}
