@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-22 10:40+0100\n"
+"POT-Creation-Date: 2019-02-27 16:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,19 +20,35 @@ msgstr ""
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: blog_project/settings.py:119
+#: blog_project/settings.py:131
 msgid "English"
 msgstr ""
 
-#: blog_project/settings.py:120
+#: blog_project/settings.py:132
 msgid "Polish"
 msgstr ""
 
-#: templates/base.html:12 templates/base.html:18
+#: templates/about.html:24 templates/base.html:18 templates/base.html:34
 msgid "Code all day long!"
 msgstr "No to kodzimy!"
 
-#: templates/base.html:27
+#: templates/about.html:55
+msgid "Aspiring programmer"
+msgstr "Aspirująca programistka"
+
+#: templates/about.html:62
+msgid "Welcome!"
+msgstr "Cześć!"
+
+#: templates/about.html:64
+msgid ""
+"I thought I could be a great medical doctor. I still think, I could. I "
+"believe though I could be an even better programmer."
+msgstr ""
+"Myślałam, że mogę być świetnym lekarzem. Nadal mogę. Sądzę jednak, że mogę "
+"być jeszcze lepszą programistką."
+
+#: templates/base.html:78
 msgid "Hi! Welcome to my blog! "
 msgstr "Cześć! Fajnie Cię widzieć na moim blogu!"
 

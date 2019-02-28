@@ -12,10 +12,11 @@ class Post(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     body = RichTextField()
+    picture = models.ImageField(upload_to='static/media/', blank=True, null=True)
 
     # translations = TranslatedFields(
     # title = models.CharField(max_length=250)
-#)
+    # )
     def __str__(self):
         return self.title
 
@@ -24,6 +25,7 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-created_at', ]
+
 
 class Skill(models.Model):
     title = models.CharField(max_length=300)

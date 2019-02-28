@@ -1,60 +1,74 @@
 {% load static i18n %}
 <!doctype html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href='{% static 'css/base.css' %}' rel ='stylesheet'>
-   <link href="https://fonts.googleapis.com/css?family=Coiny|Roboto+Slab" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='{% static 'css/base.css' %}' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Coiny|Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
-<link rel="icon" href='{% static 'img/favicon.ico' %}'/>
-  <title>{% trans "Code all day long!" %}</title>
-            </head>
-  <body>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-      
-    <div>
-      <header>
+    <link rel="icon" href='{% static 'img/favicon.ico' %}'/>
+    <title>{% trans "Code all day long!" %}</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<div>
+    <header>
         <div class="page-header">
-          <h1><a href="{% url 'home' %}">{% trans "Code all day long!" %}</a></h1>
-           </div>
-         </header>
-         <ul class="nav nav-pills">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'skill' %}">Skills</a>
-            </li>
-            <li><form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                  <input type="hidden" name="next" value="{{ redirect_to }}">
-                  <select name="language">
+            <h1><a href="{% url 'home' %}">{% trans "Code all day long!" %}</a></h1>
+        </div>
+    </header>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'skill' %}">Skills</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About me</a>
+        </li>
+        <li>
+            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                <input type="hidden" name="next" value="{{ redirect_to }}">
+                <select name="language">
                     {% get_current_language as LANGUAGE_CODE %}
                     {% get_available_languages as LANGUAGES %}
                     {% get_language_info_list for LANGUAGES as languages %}
                     {% for language in languages %}
-                    <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
-                      {{ language.name_local }} ({{ language.code }})
-                      </option>
-                      {% endfor %}
-                  </select>
-                  <input type="submit" class="btn btn-link" value="Go"/>
-           </li>
-                  </div>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li> -->
-          </ul>
-    <div class="container-fluid">     
+                        <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}
+                                selected {% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+                <input type="submit" class="btn btn-link" value="Go"/>
+        </li>
+</div>
+<!-- <li class="nav-item">
+  <a class="nav-link" href="#">Link</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+</li> -->
+</ul>
+<div class="container-fluid">
     <!-- {% if user.is_authenticated %}
       <p>Hi {{user.username}}!</p>
       <p><a href="{% url 'logout' %}">Log out</a> </p>
@@ -62,12 +76,12 @@
         <a href="{% url 'post_new' %}">+ New Blog Post</a>
       {% else %}
         <h2>{% trans "Hi! Welcome to my blog! " %}</h2> -->
-          <!-- <p>You are not logged in.</p>
+        <!-- <p>You are not logged in.</p>
       <a href="{% url 'login' %}">Log In</a> -->
-    <!-- {% endif %} -->
-        {% block content %}
-      {% endblock content %}
+        <!-- {% endif %} -->
+    {% block content %}
+    {% endblock content %}
 
-    </div>
-   </body>
+</div>
+</body>
 </html>

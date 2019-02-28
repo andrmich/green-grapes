@@ -1,5 +1,7 @@
 from django.urls import path
 from django.conf.urls.i18n import i18n_patterns
+from django.conf.urls.static import static
+from django.conf import settings
 
 from .views import (
     BlogListView,
@@ -17,4 +19,4 @@ urlpatterns = [
     path('post/<int:pk>/', BlogDetailView.as_view(), name='post_detail'),
     path('', BlogListView.as_view(), name ='home'),
     path('skill/', SkillListView.as_view(), name ='skill'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
