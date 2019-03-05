@@ -1,17 +1,38 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% load i18n %}
+{% load static i18n %}
 
 {% block content %}
 
-{% for skill in skill_list %}
-    <div class="skill-entry">
+    <main role="main">
 
-        <h2>{{ skill.title }}</h2>
-        <p>{{ skill.date }}</p>
-        <p>{{ skill.how }}</p>
-    
-    </div>
-      {% endfor %}
-      
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">{% trans "Skills" %}</h1>
+                <p class="lead text-muted">{% trans "All tutorials, books, workshops..." %}</p>
+                {#      <p>#}
+                {#        <a href="#" class="btn btn-primary my-2">Main call to action</a>#}
+                {#        <a href="#" class="btn btn-secondary my-2">Secondary action</a>#}
+                {#      </p>#}
+            </div>
+        </section>
+
+        {% for skill in skill_list %}
+<div class="skill">
+
+
+                <h3 class="card-text">{{ skill.title }}</h3>
+                <p class="card-text">{{ skill.how }}</p>
+                <p class="card-text-date">{{ skill.date }}</p>
+
+
+                </div>
+
+{% endfor %}
+
+    </main>
+
+
+
 {% endblock content %}

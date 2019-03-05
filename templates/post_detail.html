@@ -6,6 +6,7 @@
   <div class="post-entry">
   <h2>  {{post.title}} </h2>
     {{post.body | safe}}
+     <img {{ post.picture }} >
     <footer>{{post.created_at}}</footer>
   </div>
 

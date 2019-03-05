@@ -29,6 +29,7 @@
 
       <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
       {{ post.body | safe}}
+        {{ post.picutre }}
         <hr>
         <p>published: {{ post.created_at }}</p>
 

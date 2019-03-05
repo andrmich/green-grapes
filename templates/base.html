@@ -29,23 +29,15 @@
         crossorigin="anonymous"></script>
 
 <div>
-    <header>
-        <div class="page-header">
-            <h1><a href="{% url 'home' %}">{% trans "Code all day long!" %}</a></h1>
-        </div>
-    </header>
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'skill' %}">Skills</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'about' %}">About me</a>
-        </li>
-        <li>
-            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white"<a href="{% url 'home' %}">{% trans "Code all day long!" %}</a></h4>
+          <p class="text-muted">{% trans "I thought I could be a great medical doctor. I still think, I could. I believe though I could be an even better programmer." %} </p>
+        <form class="language" action="{% url 'set_language' %}" method="post">{% csrf_token %}
                 <input type="hidden" name="next" value="{{ redirect_to }}">
                 <select name="language">
                     {% get_current_language as LANGUAGE_CODE %}
@@ -54,22 +46,38 @@
                     {% for language in languages %}
                         <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}
                                 selected {% endif %}>
-                            {{ language.name_local }} ({{ language.code }})
+                            {{ language.name }}
                         </option>
                     {% endfor %}
+                <input type="submit" class="hamburger" value="Go"/>
                 </select>
-                <input type="submit" class="btn btn-link" value="Go"/>
-        </li>
-</div>
-<!-- <li class="nav-item">
-  <a class="nav-link" href="#">Link</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-</li> -->
-</ul>
+             </form>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+{#          <h4 class="text-white">{% trans 'Contact' %}</h4>#}
+          <ul class="list-unstyled">
+            <li><a href="{% url 'home' %}" class="text-white">Home</a></li>
+            <li><a  href="{% url 'skill' %}" class="text-white">Skills</a></li>
+            <li><a href="https://github.com/andrmich" class="text-white">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between">
+      <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center">
+{#        <img src="static/img/favicon.ico" height="20" width="20"/>#}
+        <strong>Greengrapes</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
 <div class="container-fluid">
-    <!-- {% if user.is_authenticated %}
+    <!--{% if user.is_authenticated %}
       <p>Hi {{user.username}}!</p>
       <p><a href="{% url 'logout' %}">Log out</a> </p>
       <div class="nav-right">
@@ -84,4 +92,58 @@
 
 </div>
 </body>
-</html>
+
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+    <p>New to Bootstrap? <a href="{{ site.url }}/">Visit the homepage</a> or read our <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/introduction/">getting started guide</a>.</p>
+  </div>
+</footer>
+
+
+
+{##}
+{#    <header>#}
+{#        <div class="page-header">#}
+{#            <h1>/h1>#}
+{#        </div>#}
+{#    </header>#}
+{##}
+{##}
+{#    <ul class="nav nav-pills">#}
+{#        <li class="nav-item">#}
+{#            <a class="nav-link" href="{% url 'home' %}">Home</a>#}
+{#        </li>#}
+{#        <li class="nav-item">#}
+{#            <a class="nav-link" href="{% url 'skill' %}">Skills</a>#}
+{#        </li>#}
+{##}
+{#        <li class="nav-item">#}
+{#            <a class="nav-link" href="{% url 'about' %}">About me</a>#}
+{#        </li>#}
+{#        <li  class="language">#}
+{#             <form class="language" action="{% url 'set_language' %}" method="post">{% csrf_token %}#}
+{#                <input type="hidden" name="next" value="{{ redirect_to }}">#}
+{#                <select name="language">#}
+{#                    {% get_current_language as LANGUAGE_CODE %}#}
+{#                    {% get_available_languages as LANGUAGES %}#}
+{#                    {% get_language_info_list for LANGUAGES as languages %}#}
+{#                    {% for language in languages %}#}
+{#                        <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}#}
+{#                                selected {% endif %}>#}
+{#                            {{ language.name }}#}
+{#                        </option>#}
+{#                    {% endfor %}#}
+{#                <input type="submit" class="hamburger" value="Go"/>#}
+{#                </select>#}
+{#             </form>#}
+{#        </li>#}
+{#    </ul>#}
+
+{#<footer>#}
+{#     Design Credits: <a target="_blank" href="https://www.vecteezy.com">www.Vecteezy.com</a>#}
+{#</footer>#}
+{#</html>#}
