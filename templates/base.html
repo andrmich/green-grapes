@@ -36,6 +36,8 @@
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
           <h4 class="text-white"<a href="{% url 'home' %}">{% trans "Code all day long!" %}</a></h4>
+        <h1 class="text-white">Michalina Andrzejewska</h1>
+    <p class="text-white">{% trans "Aspiring programmer" %}</p>
           <p class="text-muted">{% trans "I thought I could be a great medical doctor. I still think, I could. I believe though I could be an even better programmer." %} </p>
         <form class="language" action="{% url 'set_language' %}" method="post">{% csrf_token %}
                 <input type="hidden" name="next" value="{{ redirect_to }}">
@@ -56,9 +58,10 @@
         <div class="col-sm-4 offset-md-1 py-4">
 {#          <h4 class="text-white">{% trans 'Contact' %}</h4>#}
           <ul class="list-unstyled">
-            <li><a href="{% url 'home' %}" class="text-white">Home</a></li>
-            <li><a  href="{% url 'skill' %}" class="text-white">Skills</a></li>
+            <li><a href="{% url 'home' %}" class="text-white">{% trans "Home" %}</a></li>
+            <li><a  href="{% url 'skill' %}" class="text-white">{% trans "Skills" %}</a></li>
             <li><a href="https://github.com/andrmich" class="text-white">GitHub</a></li>
+              <li><a  href="{% url 'email' %}" class="text-white">{% trans "Contact me" %}</a></li>
           </ul>
         </div>
       </div>

@@ -6,7 +6,7 @@
   <div class="post-entry">
   <h2>  {{post.title}} </h2>
     {{post.body | safe}}
-     <img {{ post.picture }} >
+{#     <img src="{{ post.cover.url }}" alt = "{{ post.title }}">#}
     <footer>{{post.created_at}}</footer>
   </div>
 

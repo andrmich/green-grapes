@@ -29,7 +29,7 @@
 
       <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
       {{ post.body | safe}}
-        {{ post.picutre }}
+{#       <img src="{{ post.cover.url }}" alt="{{ post.title }}">#}
         <hr>
         <p>published: {{ post.created_at }}</p>
 

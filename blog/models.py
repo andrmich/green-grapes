@@ -6,13 +6,13 @@ from ckeditor.fields import RichTextField
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    author = models.ForeignKey(
-        'auth.User',
-        on_delete=models.CASCADE,
-    )
+    # author = models.ForeignKey(
+    #     'auth.User',
+    #     on_delete=models.CASCADE,
+    # )
     created_at = models.DateTimeField(auto_now_add=True)
     body = RichTextField()
-    picture = models.ImageField(upload_to='static/media/', blank=True, null=True)
+    cover = models.ImageField(upload_to='images/', blank=True, null=True)
 
     # translations = TranslatedFields(
     # title = models.CharField(max_length=250)
